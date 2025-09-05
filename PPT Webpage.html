@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulturaLens | Reimagining Heritage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+       body{font-family:Inter,sans-serif;background-color:#fdfbf8;color:navy}.nav-link{transition:color .3s;position:relative;padding-bottom:4px}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background-color:#f93;transition:width .3s}.nav-link.active::after,.nav-link:hover::after{width:100%}.tab.active{border-color:#f93;background-color:#fff;color:navy}.chart-container{position:relative;width:100%;max-width:400px;margin-left:auto;margin-right:auto;height:350px;max-height:400px}.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}.fade-in.visible{opacity:1;transform:translateY(0)}.hero-bg{background-image:linear-gradient(135deg,#f93 0,#fff 50%,#138808 100%)}
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#FDFBF8]/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#000080]">CulturaLens (PPT Webpage)</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#problem" class="nav-link text-gray-600 hover:text-[#000080]">The Problem</a>
+                <a href="#solution" class="nav-link text-gray-600 hover:text-[#000080]">Our Solution</a>
+                <a href="#audience" class="nav-link text-gray-600 hover:text-[#000080]">Audience</a>
+                <a href="#business" class="nav-link text-gray-600 hover:text-[#000080]">Business Model</a>
+                <a href="#usp" class="nav-link text-gray-600 hover:text-[#000080]">Our Edge</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32 hero-bg">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-[#000080] mb-4">Reimagining Heritage for the Digital Age.</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                    CulturaLens is an interactive platform that bridges the past and the future, transforming how we experience history, identity, and culture through immersive AR and VR technology.
+                </p>
+            </div>
+        </section>
+
+        <section id="problem" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Why This Problem Matters</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Our shared heritage is fading. We are on a mission to preserve and revitalize it before it's too late.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/50 fade-in">
+                        <div class="text-3xl text-[#FF9933] mb-4">🏛️</div>
+                        <h4 class="font-bold text-lg mb-2">Disappearing Traditions</h4>
+                        <p class="text-gray-600 text-sm">Modernization is causing many traditions, languages, and stories to vanish. Once lost, they are gone forever.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/50 fade-in">
+                        <div class="text-3xl text-[#138808] mb-4">📖</div>
+                        <h4 class="font-bold text-lg mb-2">Static Education</h4>
+                        <p class="text-gray-600 text-sm">Students find culture boring because it’s taught through static textbooks that fail to capture their imagination.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/50 fade-in">
+                        <div class="text-3xl text-[#FF9933] mb-4">📸</div>
+                        <h4 class="font-bold text-lg mb-2">Shallow Tourism</h4>
+                        <p class="text-gray-600 text-sm">Tourists often get superficial experiences. They see the site, but miss the rich story and context behind it.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200/50 fade-in">
+                        <div class="text-3xl text-[#138808] mb-4">⏳</div>
+                        <h4 class="font-bold text-lg mb-2">Urgent Need for Action</h4>
+                        <p class="text-gray-600 text-sm">There is an urgent need for modern solutions to preserve, archive, and reimagine heritage for new generations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-16 md:py-24 bg-[#FEF7F0]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Our Solution: The Cultural Explorer App</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">We've built a time machine in your pocket, a platform that acts as a bridge between the physical world and our collective history.</p>
+                </div>
+                <div class="max-w-4xl mx-auto fade-in">
+                    <div class="flex justify-center border-b border-gray-300 mb-8">
+                        <button data-tab="ar" class="tab active font-semibold py-3 px-6 border-b-2">AR Mode</button>
+                        <button data-tab="vr" class="tab font-semibold py-3 px-6 border-b-2 border-transparent text-gray-500">VR Mode</button>
+                        <button data-tab="game" class="tab font-semibold py-3 px-6 border-b-2 border-transparent text-gray-500">Gamification</button>
+                    </div>
+                    <div id="tab-content" class="min-h-[200px]">
+                        <div data-content="ar" class="tab-pane active">
+                            <h4 class="font-bold text-xl mb-3 text-center">Augmented Reality: History Comes to Life</h4>
+                            <p class="text-gray-600 text-center">Point your smartphone at a monument to instantly see its story unfold. Watch historical figures appear, architectural details highlight themselves, and ancient myths play out right on your screen. It's an interactive layer on top of reality.</p>
+                        </div>
+                        <div data-content="vr" class="tab-pane hidden">
+                            <h4 class="font-bold text-xl mb-3 text-center">Virtual Reality: Travel Through Time</h4>
+                            <p class="text-gray-600 text-center">Take fully immersive virtual tours of sites like the Taj Mahal or Ajanta caves from a classroom in New York or a living room in London. Our VR mode makes world heritage accessible to everyone, everywhere.</p>
+                        </div>
+                        <div data-content="game" class="tab-pane hidden">
+                           <h4 class="font-bold text-xl mb-3 text-center">Gamification: Learn by Playing</h4>
+                           <p class="text-gray-600 text-center">To make learning engaging and memorable, we've integrated gamification. Earn digital badges, take on cultural quizzes, and embark on treasure-hunt style explorations to make discovering history fun and rewarding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="audience" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Who We Serve</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Our solution is designed to solve problems for multiple groups at once. Click on a segment of the chart to learn more about our diverse audience.</p>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 fade-in">
+                    <div class="w-full lg:w-1/2">
+                       <div class="chart-container">
+                           <canvas id="audienceChart"></canvas>
+                       </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div id="audience-details">
+                            <h4 id="audience-title" class="text-2xl font-bold mb-4 text-[#000080]">Our Target Audience</h4>
+                            <p id="audience-description" class="text-gray-600">Our platform provides unique value to a wide range of users, from students in the classroom to travelers exploring new worlds. Each group has distinct needs, and our app is tailored to meet them in an engaging, modern way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="business" class="py-16 md:py-24 bg-[#FEF7F0]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Feasibility & Business Model</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">We have a sustainable and scalable model built on diverse revenue streams, ready for growth.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-200/50 fade-in">
+                        <div class="text-3xl mb-4 text-[#FF9933]">🎓</div>
+                        <h4 class="font-bold text-xl mb-2">Institutional Subscriptions</h4>
+                        <p class="text-gray-600">A B2B model providing annual licenses to schools, universities, and museums for their students and visitors, creating a stable, recurring revenue stream.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-200/50 fade-in">
+                        <div class="text-3xl mb-4 text-[#138808]">🎟️</div>
+                        <h4 class="font-bold text-xl mb-2">Freemium Model</h4>
+                        <p class="text-gray-600">Basic site information is free for all users. Premium content, such as in-depth VR tours and expert-narrated stories, is available via small one-time payments.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-200/50 fade-in">
+                        <div class="text-3xl mb-4 text-[#FF9933]">🤝</div>
+                        <h4 class="font-bold text-xl mb-2">Tourism Partnerships</h4>
+                        <p class="text-gray-600">Collaborating with tourism boards and cultural organizations to create custom, branded content to promote their regions to a global audience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usp" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Our Unique Edge</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">We don't just preserve heritage; we make it interactive, fun, and accessible for everyone.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">Tech & Tradition United</h4>
+                        <p class="text-gray-600 text-sm">We are a unique bridge between the past and future, combining cutting-edge AR/VR/AI with authentic storytelling and cultural knowledge.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">Multi-Audience Solution</h4>
+                        <p class="text-gray-600 text-sm">Our platform simultaneously serves students, tourists, communities, and researchers, creating a holistic ecosystem for cultural heritage.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">Scalable by Design</h4>
+                        <p class="text-gray-600 text-sm">Our model is built to scale. We can start with one city, validate, and then expand to cover heritage sites nationwide and globally.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">Real-World Impact</h4>
+                        <p class="text-gray-600 text-sm">We create tangible impact by preserving culture, boosting local tourism economies, and building a sense of pride in our shared heritage.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">Market Validated</h4>
+                        <p class="text-gray-600 text-sm">We’ve done the research, built the prototype, and validated the market need. The demand for engaging cultural experiences is clear.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg border border-gray-200/50 fade-in">
+                        <h4 class="font-bold text-lg mb-2 text-[#000080]">First-Mover Advantage</h4>
+                        <p class="text-gray-600 text-sm">While others focus on simple guides or preservation, we are pioneering a truly interactive and educational platform, giving us a key advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#000080] text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">Join Us in Reimagining Heritage</h3>
+            <p class="max-w-xl mx-auto mb-8">
+                We have the vision, the technology, and the passion. We invite you to join us in our mission 
+                to preserve and promote our shared heritage for generations to come.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <button class="bg-[#FF9933] text-[#000080] font-bold py-3 px-8 rounded-lg hover:bg-[#c87627] transition-colors w-full md:w-auto">
+                    Contact Us
+                </button>
+                <a href="https://projects06.github.io/CulturaLensPrototype/" target="_blank"
+                   class="bg-white text-[#000080] font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors w-full md:w-auto">
+                    Visit Our Website
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+       document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelectorAll(".tab"),t=document.querySelectorAll(".tab-pane");e.forEach((n=>{n.addEventListener("click",(()=>{const i=n.getAttribute("data-tab");e.forEach((e=>e.classList.remove("active"))),n.classList.add("active"),t.forEach((e=>{e.getAttribute("data-content")===i?(e.classList.remove("hidden"),e.classList.add("active")):(e.classList.add("hidden"),e.classList.remove("active"))}))}))}));const n=[{title:"Students & Educators",description:"Desperately searching for engaging, interactive methods to teach and learn history and culture. We give them a dynamic tool that goes far beyond the limitations of traditional education."},{title:"Tourists (Domestic & International)",description:"They want authentic stories and immersive experiences, not just photo opportunities. Our app provides the rich narrative they crave, turning a simple visit into a memorable journey."},{title:"Local Communities & Elders",description:"The holders of invaluable folk knowledge who often lack a platform to share it. We offer them a powerful digital archiving tool to preserve their stories for future generations."},{title:"Gen Z & Young Professionals",description:"A tech-savvy generation interested in culture but expecting modern, interactive, and mobile-first experiences. Our app speaks their language and delivers content in a way they connect with."}],i=document.getElementById("audienceChart").getContext("2d"),o=new Chart(i,{type:"doughnut",data:{labels:["Students & Educators","Tourists","Local Communities","Gen Z & Professionals"],datasets:[{label:"Target Audience",data:[35,30,15,20],backgroundColor:["#FF9933","#138808","#000080","#6B6B6B"],hoverOffset:4,borderColor:"#FDFBF8",borderWidth:4}]},options:{responsive:!0,maintainAspectRatio:!1,cutout:"60%",plugins:{legend:{position:"bottom",labels:{color:"#000080",padding:15,font:{size:12}}},tooltip:{callbacks:{label:function(e){let t=e.label||"";return t&&(t+=": "),null!==e.parsed&&(t+=e.parsed+"%"),t}}}}}});document.getElementById("audienceChart").onclick=function(e){const t=o.getElementsAtEventForMode(e,"nearest",{intersect:!0},!0);if(t.length){const e=t[0].index,i=n[e];document.getElementById("audience-title").innerText=i.title,document.getElementById("audience-description").innerText=i.description}};const a=document.querySelectorAll(".fade-in"),r=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&e.target.classList.add("visible")}))}),{threshold:.1});a.forEach((e=>{r.observe(e)}));const s=document.querySelectorAll(".nav-link"),c=document.querySelectorAll("main section"),l=new IntersectionObserver((e=>{e.forEach((e=>{if(e.isIntersecting){const t=e.target.getAttribute("id");s.forEach((e=>{e.classList.remove("active"),e.getAttribute("href")===`#${t}`&&e.classList.add("active")}))}}))}),{rootMargin:"-30% 0px -70% 0px"});c.forEach((e=>{l.observe(e)}))}));
+    </script>
+</body>
+</html>
